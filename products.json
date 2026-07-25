@@ -1,0 +1,333 @@
+{
+  "categories": [
+    { "id": "barreiras-flexiveis", "name": "Barreiras flexíveis" },
+    { "id": "guarda-corpo", "name": "Guarda-corpo" },
+    { "id": "cantos-e-colunas", "name": "Proteções flexíveis para cantos e colunas" },
+    { "id": "estruturas-armazenagem", "name": "Proteções flexíveis para estruturas de armazenagem" },
+    { "id": "postes-e-traves", "name": "Postes e traves de proteção" },
+    { "id": "portoes-seguranca", "name": "Portões de segurança" },
+    { "id": "rodapes-e-batentes", "name": "Rodapés e batentes de roda flexíveis" }
+  ],
+  "products": [
+    {
+      "id": "tb-400",
+      "name": "TB 400",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 20100,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-400/",
+      "image": "images/TB400.jpg"
+    },
+    {
+      "id": "tb-400-plus",
+      "name": "TB 400 PLUS",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 20100,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-400-plus/",
+      "image": "images/TB400-PLUS.jpg"
+    },
+    {
+      "id": "tb-400-plus-fence",
+      "name": "TB 400 PLUS FENCE",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 20100,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-400-plus-fence/",
+      "image": "images/TB400-PLUS-FENCE.jpg"
+    },
+    {
+      "id": "tb-400-grill",
+      "name": "TB 400 GRILL",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 20100,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-400-grill/",
+      "image": "images/TB400-GRILL.jpg"
+    },
+    {
+      "id": "tb-400-double",
+      "name": "TB 400 DOUBLE",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 39100,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-400-double/",
+      "image": "images/TB400-DOUBLE.jpg"
+    },
+    {
+      "id": "tb-400-double-plus",
+      "name": "TB 400 DOUBLE PLUS",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 39100,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-400-double-plus/",
+      "image": "images/TB400-DOUBLE-PLUS.jpg"
+    },
+    {
+      "id": "tb-400-double-grill",
+      "name": "TB 400 DOUBLE GRILL",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 39100,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-400-double-grill/",
+      "image": "images/TB400-DOUBLE-GRILL.jpg"
+    },
+    {
+      "id": "tb-260",
+      "name": "TB 260",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 21200,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-260/",
+      "image": "images/TB260.jpg"
+    },
+    {
+      "id": "tb-260-plus",
+      "name": "TB 260 PLUS",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 21200,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-260-plus/",
+      "image": "images/TB260-PLUS.jpg"
+    },
+    {
+      "id": "tb-260-plus-fence",
+      "name": "TB 260 PLUS FENCE",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 21200,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-260-plus-fence/",
+      "image": "images/TB260-PLUS-FENCE.jpg"
+    },
+    {
+      "id": "tb-260-grill",
+      "name": "TB 260 GRILL",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 21200,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-260-grill/",
+      "image": "images/TB260-GRILL.jpg"
+    },
+    {
+      "id": "tb-260-double",
+      "name": "TB 260 DOUBLE",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 46500,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-260-double/",
+      "image": "images/TB260-DOUBLE.jpg"
+    },
+    {
+      "id": "tb-260-double-plus",
+      "name": "TB 260 DOUBLE PLUS",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 46500,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-260-double-plus/",
+      "image": "images/TB-260-DOUBLE-PLUS.jpg"
+    },
+    {
+      "id": "tb-mini",
+      "name": "TB MINI",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 5000,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-mini/",
+      "image": "images/TB-MINI.jpg"
+    },
+    {
+      "id": "tb-mini-double",
+      "name": "TB MINI DOUBLE",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 5000,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-mini-double/",
+      "image": "images/TB-MINI-DOUBLE.jpg"
+    },
+    {
+      "id": "tb-super-triple",
+      "name": "TB SUPER TRIPLE",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 48300,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-super-triple/",
+      "image": "images/TB-SUPER-TRIPLE.jpg"
+    },
+    {
+      "id": "tb-super-double",
+      "name": "TB SUPER DOUBLE",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 50100,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-super-double/",
+      "image": "images/TB-SUPER-DOUBLE.jpg"
+    },
+    {
+      "id": "tb-550",
+      "name": "TB 550",
+      "category_id": "barreiras-flexiveis",
+      "capacity_joules": 18300,
+      "url": "https://www.docksteel.com.br/barreira-flexvel-tb-550/",
+      "image": "images/TB-550.jpg"
+    },
+    {
+      "id": "hp-plus",
+      "name": "HP PLUS",
+      "category_id": "guarda-corpo",
+      "capacity_joules": 5500,
+      "url": "https://www.docksteel.com.br/hp-plus/",
+      "image": "images/HP-PLUS.jpg"
+    },
+    {
+      "id": "hp-grill",
+      "name": "HP GRILL",
+      "category_id": "guarda-corpo",
+      "capacity_joules": 5500,
+      "url": "https://www.docksteel.com.br/hp-grill/",
+      "image": "images/HP-GRILL.jpg"
+    },
+    {
+      "id": "cp-protetor-de-canto",
+      "name": "CP Protetor de Canto",
+      "category_id": "cantos-e-colunas",
+      "capacity_joules": 500,
+      "url": "https://www.docksteel.com.br/cp-protetor-de-canto/",
+      "image": "images/CP-PROTETOR-CANTO.jpg"
+    },
+    {
+      "id": "protetor-de-coluna-universal",
+      "name": "Protetor de Coluna Universal",
+      "category_id": "cantos-e-colunas",
+      "capacity_joules": 2200,
+      "url": "https://www.docksteel.com.br/protetores-de-coluna-universal/",
+      "image": "images/PROTETOR-COLUNA-UNIVERSAL.jpg"
+    },
+    {
+      "id": "protetor-de-coluna-kp",
+      "name": "Protetor de Coluna - KP",
+      "category_id": "cantos-e-colunas",
+      "capacity_joules": 2200,
+      "url": "https://www.docksteel.com.br/protecao-de-colunas/",
+      "image": "images/PROTETOR-COLUNA-KP.jpg"
+    },
+    {
+      "id": "rackbull",
+      "name": "RACKBULL®",
+      "category_id": "estruturas-armazenagem",
+      "capacity_joules": 400,
+      "url": "https://www.docksteel.com.br/rack-bull/",
+      "image": "images/RACKBULL.png"
+    },
+    {
+      "id": "rack-end",
+      "name": "RACK END®",
+      "category_id": "estruturas-armazenagem",
+      "capacity_joules": 8500,
+      "url": "https://www.docksteel.com.br/rack-end/",
+      "image": "images/RACK-END.png"
+    },
+    {
+      "id": "bo250t",
+      "name": "BO250T",
+      "category_id": "postes-e-traves",
+      "capacity_joules": 24100,
+      "url": "https://www.docksteel.com.br/bo250t/",
+      "image": "images/BO250T.jpg"
+    },
+    {
+      "id": "bo200f",
+      "name": "BO200F",
+      "category_id": "postes-e-traves",
+      "capacity_joules": 16000,
+      "url": "https://www.docksteel.com.br/bo200f/",
+      "image": "images/BO200F.jpg"
+    },
+    {
+      "id": "bo200r",
+      "name": "BO200R",
+      "category_id": "postes-e-traves",
+      "capacity_joules": 10200,
+      "url": "https://www.docksteel.com.br/bo200r/",
+      "image": "images/BO200R.jpg"
+    },
+    {
+      "id": "bo170b",
+      "name": "BO170B",
+      "category_id": "postes-e-traves",
+      "capacity_joules": 7500,
+      "url": "https://www.docksteel.com.br/bo170b/",
+      "image": "images/BO170B.jpg"
+    },
+    {
+      "id": "bo125l",
+      "name": "BO125L",
+      "category_id": "postes-e-traves",
+      "capacity_joules": 2500,
+      "url": "https://www.docksteel.com.br/bo125l/",
+      "image": "images/BO125L.jpg"
+    },
+    {
+      "id": "goal-post-250r",
+      "name": "GOAL POST 250R",
+      "category_id": "postes-e-traves",
+      "capacity_joules": 10200,
+      "url": "https://www.docksteel.com.br/goal-post-250r/",
+      "image": "images/GOAL-POST-200R.jpg"
+    },
+    {
+      "id": "goal-post-200b",
+      "name": "GOAL POST 200B",
+      "category_id": "postes-e-traves",
+      "capacity_joules": 7500,
+      "url": "https://www.docksteel.com.br/goal-post-200b/",
+      "image": "images/GOAL-POST-200B.jpg"
+    },
+    {
+      "id": "dg250r",
+      "name": "DG250R",
+      "category_id": "portoes-seguranca",
+      "capacity_joules": 10200,
+      "url": "https://www.docksteel.com.br/dockgate250r/",
+      "image": "images/DG250R.jpg"
+    },
+    {
+      "id": "dg250f",
+      "name": "DG250F",
+      "category_id": "portoes-seguranca",
+      "capacity_joules": 16000,
+      "url": "https://www.docksteel.com.br/dockgate250f/",
+      "image": "images/DG250F.jpg"
+    },
+    {
+      "id": "flip200f-plus",
+      "name": "FLIP200F PLUS",
+      "category_id": "rodapes-e-batentes",
+      "capacity_joules": 15200,
+      "url": "https://www.docksteel.com.br/flip200f-plus/",
+      "image": "images/FLIP-PLUS.jpg"
+    },
+    {
+      "id": "flip200f",
+      "name": "FLIP200F",
+      "category_id": "rodapes-e-batentes",
+      "capacity_joules": 17000,
+      "url": "https://www.docksteel.com.br/flip200f/",
+      "image": "images/FLIP-200F.jpg"
+    },
+    {
+      "id": "flip180b",
+      "name": "FLIP180B",
+      "category_id": "rodapes-e-batentes",
+      "capacity_joules": 8100,
+      "url": "https://www.docksteel.com.br/flip180b/",
+      "image": "images/FLIP-180.jpg"
+    },
+    {
+      "id": "flip180l-m",
+      "name": "FLIP180L M",
+      "category_id": "rodapes-e-batentes",
+      "capacity_joules": 3500,
+      "url": "https://www.docksteel.com.br/flip180l-m/",
+      "image": "images/FLIP-180M.jpg"
+    },
+    {
+      "id": "flip120l",
+      "name": "FLIP120L",
+      "category_id": "rodapes-e-batentes",
+      "capacity_joules": 4200,
+      "url": "https://www.docksteel.com.br/flip120l/",
+      "image": "images/FLIP-120.jpg"
+    },
+    {
+      "id": "flip120l-m",
+      "name": "FLIP120L M",
+      "category_id": "rodapes-e-batentes",
+      "capacity_joules": 2600,
+      "url": "https://www.docksteel.com.br/flip120l-m/",
+      "image": "images/FLIP-120M.jpg"
+    }
+  ]
+}

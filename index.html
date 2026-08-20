@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CinetCalc - Dimensionamento DS-FLEX | Docksteel</title>
-    <meta name="description" content="Calculadora de Energia Cinética e Dimensionamento de Proteções Flexíveis DS-FLEX da Docksteel. Tecnologia Boplan Flex Impact para segurança industrial.">
+    <title>Calculadora de Impacto - Dimensionamento DS-FLEX | Docksteel</title>
+    <meta name="description" content="Calculadora de Impacto e Dimensionamento de Proteções Flexíveis DS-FLEX da Docksteel. Tecnologia Boplan Flex Impact para segurança industrial.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +28,7 @@
 
                 <div class="product-badge-group">
                     <span class="badge-dsflex">DS-FLEX</span>
-                    <span class="badge-sub">CinetCalc v2.0</span>
+                    <span class="badge-sub">Calculadora de Impacto</span>
                 </div>
             </div>
 
@@ -53,59 +53,11 @@
         
         <section class="hero-intro">
             <h1 class="hero-title">
-                Calculadora de Energia Cinética <span class="highlight-text">&amp; Dimensionamento DS-Flex</span>
+                Calculadora de Impacto <span class="highlight-text">&amp; Dimensionamento DS-Flex</span>
             </h1>
             <p class="hero-subtitle">
-                Calcule com precisão a energia de colisão operacional de veículos industriais e selecione as barreiras de polímero com <strong>memória ativa (Flex Impact®)</strong> ideais para o seu armazém e logística.
+                Calcule com precisão a energia de colisão operacional de veículos industriais e selecione as barreiras com <strong>memória ativa (Flex Impact®)</strong> ideais para a sua operação.
             </p>
-        </section>
-
-        <section class="presets-section">
-            <div class="presets-label">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 12 12 16 14"></polygon></svg>
-                <span>Atalhos Rápidos de Veículos Típicos:</span>
-            </div>
-            <div class="presets-grid">
-                <button type="button" class="preset-btn active" data-mass="3500" data-vel="10" data-angle="90" data-name="Empilhadeira Retrátil">
-                    <span class="preset-icon">⚡</span>
-                    <span class="preset-info">
-                        <strong>Empilhadeira Retrátil</strong>
-                        <small>3.500 kg • 10 km/h</small>
-                    </span>
-                </button>
-
-                <button type="button" class="preset-btn" data-mass="1500" data-vel="6" data-angle="90" data-name="Transpaleteira Elétrica">
-                    <span class="preset-icon">🛒</span>
-                    <span class="preset-info">
-                        <strong>Transpaleteira Elétrica</strong>
-                        <small>1.500 kg • 6 km/h</small>
-                    </span>
-                </button>
-
-                <button type="button" class="preset-btn" data-mass="5000" data-vel="12" data-angle="45" data-name="Empilhadeira Contrabalançada">
-                    <span class="preset-icon">🚜</span>
-                    <span class="preset-info">
-                        <strong>Contrabalançada 3.5t</strong>
-                        <small>5.000 kg • 12 km/h</small>
-                    </span>
-                </button>
-
-                <button type="button" class="preset-btn" data-mass="8500" data-vel="15" data-angle="45" data-name="Empilhadeira Pesada">
-                    <span class="preset-icon">🏗️</span>
-                    <span class="preset-info">
-                        <strong>Empilhadeira Pesada 8t</strong>
-                        <small>8.500 kg • 15 km/h</small>
-                    </span>
-                </button>
-
-                <button type="button" class="preset-btn" data-mass="3500" data-vel="20" data-angle="30" data-name="Veículo Utilitário / VUC">
-                    <span class="preset-icon">🚚</span>
-                    <span class="preset-info">
-                        <strong>Veículo Utilitário / VUC</strong>
-                        <small>3.500 kg • 20 km/h</small>
-                    </span>
-                </button>
-            </div>
         </section>
 
         <main class="app-layout">
@@ -117,27 +69,16 @@
                         <span class="safety-margin-tag">Norma EN 15512 / PAS 13</span>
                     </div>
                     <h2>Dados de <span>Impacto &amp; Trajetória</span></h2>
-                    <p>Ajuste os parâmetros ou selecione o ângulo para dimensionamento exato.</p>
+                    <p>Ajuste os parâmetros operacionais para dimensionamento exato.</p>
                 </header>
 
                 <form class="calculator-form" onsubmit="event.preventDefault();">
 
-                    <div class="input-group">
-                        <label for="category">
-                            <span class="lbl-icon">📦</span>
-                            <span>Categoria de Proteção DS-Flex</span>
-                        </label>
-                        <div class="select-wrapper">
-                            <select id="category" class="custom-select" aria-label="Selecione a categoria do produto">
-                            </select>
-                        </div>
-                    </div>
-
                     <div class="input-group dual-control">
                         <div class="label-row">
                             <label for="mass">
-                                <span class="lbl-icon">⚖️</span>
-                                <span>Massa Total do Veículo + Carga</span>
+                                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M12 3v18"/></svg>
+                                <span>Massa Total (Veículo + Carga)</span>
                             </label>
                             <span class="control-unit-badge">kg</span>
                         </div>
@@ -145,18 +86,12 @@
                             <input type="number" id="mass" value="3500" min="100" max="25000" step="50" placeholder="Ex: 3500" inputmode="decimal" required />
                             <input type="range" id="massRange" min="500" max="15000" step="100" value="3500" class="custom-range" />
                         </div>
-                        <div class="range-marks">
-                            <span>500 kg</span>
-                            <span>5.000 kg</span>
-                            <span>10.000 kg</span>
-                            <span>15.000 kg</span>
-                        </div>
                     </div>
 
                     <div class="input-group dual-control">
                         <div class="label-row">
                             <label for="velocity">
-                                <span class="lbl-icon">⚡</span>
+                                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                                 <span>Velocidade de Trânsito</span>
                             </label>
                             <span class="control-unit-badge">km/h</span>
@@ -165,78 +100,50 @@
                             <input type="number" id="velocity" value="10" min="1" max="50" step="0.5" placeholder="Ex: 10" inputmode="decimal" required />
                             <input type="range" id="velocityRange" min="1" max="30" step="0.5" value="10" class="custom-range" />
                         </div>
-                        <div class="range-marks">
-                            <span>1 km/h</span>
-                            <span>10 km/h</span>
-                            <span>20 km/h</span>
-                            <span>30 km/h</span>
-                        </div>
                     </div>
 
                     <div class="input-group">
                         <div class="label-row">
                             <label for="angle">
-                                <span class="lbl-icon">📐</span>
+                                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H3V3"/><path d="M3 21l16-9"/><path d="M7 21a5 5 0 0 0-4-4"/></svg>
                                 <span>Ângulo de Ataque do Impacto (θ)</span>
                             </label>
-                            <span class="angle-selected-badge" id="angleDisplayBadge">90º (Frontal Puro)</span>
+                            <span class="angle-selected-badge" id="angleDisplayBadge">90º (Frontal)</span>
                         </div>
 
                         <div class="angle-pills-row">
-                            <button type="button" class="angle-pill active" data-angle="90">90º (Frontal)</button>
-                            <button type="button" class="angle-pill" data-angle="60">60º</button>
-                            <button type="button" class="angle-pill" data-angle="45">45º</button>
-                            <button type="button" class="angle-pill" data-angle="30">30º</button>
-                            <button type="button" class="angle-pill" data-angle="15">15º (Rasante)</button>
+                            <button type="button" class="angle-pill active" data-angle="90">90º — Frontal</button>
+                            <button type="button" class="angle-pill" data-angle="45">45º — Lateral</button>
                         </div>
-
-                        <div class="angle-slider-wrap">
-                            <input type="range" id="angleRange" min="5" max="90" step="5" value="90" class="custom-range" />
-                            <select id="angle" class="custom-select hidden-select" aria-label="Ângulo">
-                                <option value="90" selected>90º</option>
-                                <option value="60">60º</option>
-                                <option value="45">45º</option>
-                                <option value="30">30º</option>
-                                <option value="15">15º</option>
-                            </select>
-                        </div>
-
-                        <div class="impact-vector-card">
-                            <div class="impact-vector-header">
-                                <span>Simulação Vetorial de Colisão:</span>
-                                <span class="vector-status" id="vectorFormula">E_efetiva = E_total × sen²(90º)</span>
-                            </div>
-                            <div class="vector-canvas-wrap">
-                                <canvas id="vectorCanvas" width="360" height="120"></canvas>
-                            </div>
-                        </div>
+                        <input type="hidden" id="angle" value="90" />
                     </div>
 
                     <div class="result-box">
                         <div class="result-header-row">
-                            <span class="result-main-tag">⚡ Resultados de Energia</span>
-                            <span class="safety-applied-tag">+20% Margem Inclusa no Filtro</span>
+                            <span class="result-main-tag">
+                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                <span>Resultados de Energia</span>
+                            </span>
+                            <span class="safety-applied-tag">+20% Margem Inclusa</span>
                         </div>
 
                         <div class="result-grid">
                             <div class="result-item">
-                                <span class="result-label">Energia Total de Impacto <span>(90º Frontal)</span></span>
-                                <div class="result-value" id="value">13.503,86 <span class="unit">J</span></div>
-                                <span class="result-sub-kj" id="valueKj">≈ 13,50 kJ</span>
+                                <span class="result-label">Energia Frontal <span>(90º)</span></span>
+                                <div class="result-value" id="value">13,50 <span class="unit">kJ</span></div>
                             </div>
                             
                             <div class="result-divider"></div>
                             
                             <div class="result-item highlight-effective">
-                                <span class="result-label">Energia Efetiva Perpendicular <span>(Ângulo Real)</span></span>
-                                <div class="result-value result-angle" id="effectiveValue">13.503,86 <span class="unit">J</span></div>
-                                <span class="result-sub-kj" id="effectiveValueKj">≈ 13,50 kJ</span>
+                                <span class="result-label">Energia Efetiva <span>(No Ângulo)</span></span>
+                                <div class="result-value result-angle" id="effectiveValue">13,50 <span class="unit">kJ</span></div>
                             </div>
                         </div>
 
                         <div class="impact-severity-meter">
                             <div class="severity-info">
-                                <span class="severity-label">Classificação de Impacto:</span>
+                                <span class="severity-label">Classificação do Impacto:</span>
                                 <strong id="severityText" class="severity-badge medium">Médio Impacto</strong>
                             </div>
                             <div class="severity-bar-bg">
@@ -255,7 +162,7 @@
                         <span class="chart-mode-tag">E = ½ · m · v²</span>
                     </div>
                     <h3>Curva de Energia <span>vs. Velocidade</span></h3>
-                    <p>Comportamento exponencial da energia cinética em Joules com variação de velocidade operacional.</p>
+                    <p>Comportamento exponencial da energia cinética com a velocidade.</p>
                 </header>
 
                 <div class="chart-container">
@@ -266,7 +173,7 @@
                     <div class="chart-stat-item">
                         <span class="stat-dot orange"></span>
                         <div class="stat-content">
-                            <small>Ponto Operacional Atual</small>
+                            <small>Ponto Operacional</small>
                             <strong id="chartCurrentPoint">3.500 kg @ 10 km/h</strong>
                         </div>
                     </div>
@@ -274,7 +181,7 @@
                         <span class="stat-dot cyan"></span>
                         <div class="stat-content">
                             <small>Mínimo Recomendado (+20%)</small>
-                            <strong id="chartCapacityReq">16.204 J (16,2 kJ)</strong>
+                            <strong id="chartCapacityReq">16,20 kJ</strong>
                         </div>
                     </div>
                 </div>
@@ -285,43 +192,14 @@
         <section class="recommendations-section" id="recommendations-anchor">
             <header class="recommendations-header">
                 <div class="rec-badge-row">
-                    <span class="badge badge-accent">Portfólio Docksteel DS-Flex</span>
-                    <span class="rec-count-badge" id="recCountBadge">Soluções Certificadas</span>
+                    <span class="badge badge-accent">Portfólio DS-Flex</span>
+                    <span class="rec-count-badge" id="recCountBadge">Produtos Compatíveis</span>
                 </div>
-                <h3>Proteções Recomendadas para o <span>Impacto Dimensionado</span></h3>
-                <p>Estruturas flexíveis em polímero com memória ativa que absorvem o impacto e protegem vidas, maquinários e pisos industriais.</p>
+                <h3>Produtos que Absorvem o <span>Impacto Calculado</span></h3>
+                <p>Soluções com capacidade de absorção superior à energia requerida (+20%), ordenadas por eficiência.</p>
             </header>
 
             <div id="recommendations" class="recommendations-grid">
-            </div>
-        </section>
-
-        <section class="advantages-section">
-            <div class="advantages-header">
-                <span class="badge badge-blue">Por que escolher DS-FLEX Docksteel?</span>
-                <h3>Tecnologia de Segurança com Retorno do Investimento (ROI)</h3>
-            </div>
-            <div class="advantages-grid">
-                <div class="adv-card">
-                    <div class="adv-icon">🔄</div>
-                    <h4>Memória Ativa Flex Impact®</h4>
-                    <p>Diferente do aço convencional que amassa e danifica o piso de concreto, o polímero DS-Flex absorve a energia e retorna ao seu formato original após a colisão.</p>
-                </div>
-                <div class="adv-card">
-                    <div class="adv-icon">🛡️</div>
-                    <h4>Proteção do Piso e Ancoragem</h4>
-                    <p>A deformação elástica dissipa a força do impacto progressivamente, evitando a quebra de chumbadores e trincas destrutivas no piso industrial.</p>
-                </div>
-                <div class="adv-card">
-                    <div class="adv-icon">🎨</div>
-                    <h4>Alta Visibilidade e Sem Pintura</h4>
-                    <p>Cor amarela de segurança pigmentada na massa. Resistente a raios UV, produtos químicos, não descasca e dispensa manutenções constantes de pintura.</p>
-                </div>
-                <div class="adv-card">
-                    <div class="adv-icon">📜</div>
-                    <h4>Certificação Internacional</h4>
-                    <p>Testados e homologados rigorosamente sob as normas internacionais de segurança logística e testes dinâmicos de impacto (PAS 13 / TÜV NORD).</p>
-                </div>
             </div>
         </section>
 
@@ -368,11 +246,6 @@
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                         <span>contato@docksteel.com.br</span>
                     </li>
-                    <li>
-                        <a href="https://wa.me/5515997940012?text=Ol%C3%A1%20Docksteel%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20barreiras%20DS-Flex." target="_blank" rel="noopener" class="footer-wa-btn">
-                            <span>WhatsApp: (15) 99794-0012</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -380,7 +253,7 @@
         <div class="footer-bottom">
             <div class="footer-bottom-inner">
                 <p>&copy; 2026 Docksteel Soluções em Segurança Industrial. Todos os direitos reservados.</p>
-                <p class="footer-sub-credit">CinetCalc DS-FLEX • Ferramenta Técnica de Dimensionamento de Impacto</p>
+                <p class="footer-sub-credit">Calculadora de Impacto DS-FLEX • Ferramenta Técnica de Dimensionamento</p>
             </div>
         </div>
     </footer>
@@ -412,9 +285,9 @@
                     <table class="report-table">
                         <tr>
                             <td><strong>Equipamento / Veículo:</strong></td>
-                            <td id="repVehicle">Empilhadeira Retrátil</td>
-                            <td><strong>Categoria Requerida:</strong></td>
-                            <td id="repCategory">Barreiras flexíveis</td>
+                            <td id="repVehicle">Veículo / Equipamento Operacional</td>
+                            <td><strong>Ângulo de Ataque (θ):</strong></td>
+                            <td id="repAngle">90º (Frontal)</td>
                         </tr>
                         <tr>
                             <td><strong>Massa Total (m):</strong></td>
@@ -423,10 +296,8 @@
                             <td id="repVel">10,0 km/h (2,78 m/s)</td>
                         </tr>
                         <tr>
-                            <td><strong>Ângulo de Ataque (θ):</strong></td>
-                            <td id="repAngle">90º (Frontal)</td>
                             <td><strong>Margem de Segurança:</strong></td>
-                            <td>+20% (Conforme Norma PAS 13)</td>
+                            <td colspan="3">+20% (Conforme Norma PAS 13)</td>
                         </tr>
                     </table>
                 </div>
@@ -436,30 +307,50 @@
                     <div class="report-kpi-grid">
                         <div class="report-kpi-box">
                             <small>Energia Cinética Total (90º)</small>
-                            <strong id="repTotalEnergy">13.503,86 J</strong>
-                            <span>≈ 13,50 kJ</span>
+                            <strong id="repTotalEnergy">13,50 kJ</strong>
+                            <span>Frontal</span>
                         </div>
                         <div class="report-kpi-box highlight">
                             <small>Energia Efetiva no Ângulo</small>
-                            <strong id="repEffectiveEnergy">13.503,86 J</strong>
-                            <span>≈ 13,50 kJ</span>
+                            <strong id="repEffectiveEnergy">13,50 kJ</strong>
+                            <span>No Ângulo Real</span>
                         </div>
                         <div class="report-kpi-box">
                             <small>Capacidade Mínima Requerida (+20%)</small>
-                            <strong id="repReqEnergy">16.204,63 J</strong>
+                            <strong id="repReqEnergy">16,20 kJ</strong>
                             <span>Margem Preventiva</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="report-section">
-                    <h4>3. Soluções DS-FLEX Homologadas</h4>
+                    <div class="report-section-header">
+                        <h4>3. Soluções DS-FLEX Homologadas</h4>
+                        <div class="report-controls-panel no-print">
+                            <div class="report-filter-item">
+                                <label for="reportCategoryFilter">Tipo / Categoria:</label>
+                                <select id="reportCategoryFilter" class="report-select">
+                                    <option value="all">Todos os Tipos de Produtos</option>
+                                </select>
+                            </div>
+                            <div class="report-quick-actions">
+                                <button type="button" id="btnSelectAllProducts" class="btn-quick-action" title="Marcar todos os produtos visíveis">
+                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span>Marcar Todos</span>
+                                </button>
+                                <button type="button" id="btnSelectIdealProduct" class="btn-quick-action" title="Marcar apenas o produto com melhor dimensionamento">
+                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <span>Apenas Recomendado</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div id="reportProductsList" class="report-products-list">
                     </div>
                 </div>
 
                 <div class="report-footer-print">
-                    <p>Este relatório é gerado pela ferramenta técnica <strong>CinetCalc Docksteel</strong> para auxílio no dimensionamento de proteções flexíveis em polímero com memória ativa (tecnologia Boplan® Flex Impact®). Para projetos completos de layout e instalação, consulte a equipe de engenharia da Docksteel.</p>
+                    <p>Este relatório é gerado pela ferramenta técnica <strong>Calculadora de Impacto Docksteel</strong> para auxílio no dimensionamento de proteções flexíveis em polímero com memória ativa (tecnologia Boplan® Flex Impact®). Para projetos completos de layout e instalação, consulte a equipe de engenharia da Docksteel.</p>
                 </div>
             </div>
 
@@ -473,6 +364,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

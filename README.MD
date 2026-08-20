@@ -1,103 +1,113 @@
-# DOCKSTEEL DS-FLEX • CinetCalc v2.0
-### Calculadora de Energia Cinética & Dimensionamento de Proteções Flexíveis
+# DOCKSTEEL DS-FLEX • Calculadora de Impacto
 
-Aplicação web profissional de engenharia desenvolvida para o dimensionamento técnico de barreiras de proteção de impacto industrial da linha **DS-FLEX (Docksteel)** em parceria com a tecnologia pioneira **Boplan® (Flex Impact®)**.
-
----
-
-## 🛡️ Sobre a Docksteel & Linha DS-FLEX
-
-A **Docksteel** é referência nacional em sistemas de segurança industrial, proteção contra impactos e logística segura. 
-A linha **DS-FLEX** utiliza polímeros de alta absorção de choque com **memória ativa**, que deformam elasticamente durante uma colisão e retornam ao formato original, preservando maquinários, estruturas, vidas e evitando danos ao piso de concreto.
+Aplicação web de engenharia para dimensionamento técnico de barreiras de proteção industrial da linha **DS-FLEX (Docksteel)**, utilizando a tecnologia **Boplan® Flex Impact®**.
 
 ---
 
-## 🚀 Funcionalidades da Aplicação
+## Sobre
 
-### 1. Dimensionamento em Tempo Real
-- **Cálculo de Energia Cinética Total ($E_k$) a 90º**:
-  $$E = \frac{1}{2} \cdot m \cdot v^2$$
-- **Cálculo de Energia Efetiva Perpendicular no Ângulo ($\theta$)**:
-  $$E_{\text{efetiva}} = E_{\text{total}} \cdot \sin^2(\theta)$$
-- **Margem de Segurança Preventiva (+20%)**: Em conformidade com as diretrizes da norma internacional **PAS 13 / EN 15512**.
-
-### 2. Atalhos Rápidos de Veículos Industriais (Presets)
-- 🛒 **Transpaleteira Elétrica**: 1.500 kg @ 6 km/h
-- ⚡ **Empilhadeira Retrátil**: 3.500 kg @ 10 km/h
-- 🚜 **Empilhadeira Contrabalançada (3.5t)**: 5.000 kg @ 12 km/h
-- 🏗️ **Empilhadeira Pesada (8t)**: 8.500 kg @ 15 km/h
-- 🚚 **Veículo Utilitário / VUC**: 3.500 kg @ 20 km/h
-
-### 3. Controles Interativos e Simulação Vetorial 2D
-- **Controles Duplos (Input + Sliders)**: Sincronização em tempo real de massa e velocidade.
-- **Seletor de Ângulo (Pills + Slider)**: Seleção rápida de 90º (frontal), 60º, 45º, 30º e 15º (rasante).
-- **Simulador Gráfico 2D no Canvas**: Demonstração visual do ângulo de impacto do veículo contra a barreira flexível e decomposição das forças em tempo real.
-
-### 4. Análise Gráfica Dinâmica (Chart.js)
-- Curva exponencial de energia vs. velocidade.
-- Linha de corte da capacidade do produto recomendado.
-- Tooltip com telemetria detalhada em Joules e kiloJoules (kJ).
-
-### 5. Sistema Inteligente de Recomendação de Produtos
-- **Opção Recomendada (Impacto Real no Ângulo + 20%)**
-- **Opção Reforçada (Pior Cenário / Frontal 90º + 20%)**
-- **Medidor de Capacidade**: Exibe a porcentagem exata de absorção utilizada e a margem de reserva.
-- **Link Direto**: Para fichas técnicas oficiais no portal `docksteel.com.br`.
-- **Cotação no WhatsApp**: Link com mensagem pré-formatada contendo todos os dados operacionais e o produto homologado.
-
-### 6. Emissão de Laudo Técnico (Impressão / PDF)
-- Geração instantânea de relatório de dimensionamento técnico com data, código de laudo, dados do veículo e soluções DS-FLEX indicadas.
+A **Docksteel** é referência nacional em sistemas de segurança industrial e proteção contra impactos.  
+A linha **DS-FLEX** utiliza polímeros de alta absorção de choque com **memória ativa**: deformam elasticamente durante a colisão e retornam ao formato original, preservando maquinários, estruturas e pessoas.
 
 ---
 
-## 🎨 Identidade Visual & Design System
+## Funcionalidades
 
-- **Cores Oficiais**:
-  - `DS Safety Orange`: `#FF6B00` / `#FF852E`
-  - `Boplan Yellow`: `#FFB800`
-  - `Industrial Slate/Navy Base`: `#070A10` / `#0E1422` / `#162034`
-  - `Steel Blue Accent`: `#38BDF8`
-  - `Approved Green`: `#10B981`
-- **Tipografia**: `Outfit` (Headings industriais de alto impacto) + `Inter` (Dados técnicos legíveis).
-- **Efeitos**: Glassmorphism, iluminação com glow suave, faixas de segurança industrial e animações fluidas.
+### Cálculo em Tempo Real
+- Energia Cinética Total (90°): `E = ½ · m · v²`
+- Energia Efetiva no Ângulo: `E_efetiva = E_total · sin²(θ)`
+- Margem de Segurança Preventiva de +20% (Norma **PAS 13 / EN 15512**)
+
+### Controles Interativos
+- Sliders e inputs numéricos sincronizados para massa e velocidade
+- Seletor de ângulo em pills rápidas: 90°, 60°, 45°, 30°, 15°
+- Simulação gráfica vetorial 2D no Canvas com animação em tempo real
+
+### Análise Gráfica (Chart.js)
+- Curva de energia vs. velocidade com dois datasets (efetiva + frontal 90°)
+- Tema adaptável (Dark / Light) com atualização dinâmica do gráfico
+
+### Recomendação de Produtos
+- Filtragem automática do catálogo por energia requerida com margem de +20%
+- Cards de produto com medidor de capacidade de absorção e link para ficha técnica
+
+### Laudo Técnico (PDF / Impressão)
+- Modal com dados operacionais, resultados físicos e produtos homologados
+- Filtro de categoria e seleção individual por checkbox
+- Ações rápidas: Marcar Todos / Apenas Recomendado
+- Impressão limpa: controles ocultos via `@media print`
+
+### Tema Dark / Light
+- Alternância persistida no `localStorage`
 
 ---
 
-## 📁 Estrutura de Arquivos
+## Arquitetura
+
+O projeto utiliza **ES Modules nativos** sem bundler, com separação por responsabilidade:
 
 ```
 CinetCalc/
-├── images/             # 48 Fotos técnicas de produtos DS-FLEX Docksteel
-├── index.html          # Interface HTML5 semântica e responsiva
-├── style.css           # Design System oficial DOCKSTEEL DS-FLEX
-├── script.js           # Motor de cálculo, simulação 2D e gráficos
-├── products.json       # Catálogo de produtos e capacidades em Joules
-└── README.md           # Documentação completa
+├── index.html              # Estrutura principal da aplicação
+├── style.css               # Design system completo (tokens, componentes, responsivo)
+├── products.json           # Catálogo de produtos e categorias DS-FLEX
+├── script.js               # Ponto de entrada legado (delega para js/app.js)
+└── js/
+    ├── app.js              # Orquestrador principal (DOMContentLoaded, eventos)
+    ├── physics.js          # Fórmulas puras de física (sem dependência de DOM)
+    ├── chart.js            # Inicialização e atualização do Chart.js
+    ├── vector-canvas.js    # Simulação vetorial 2D no <canvas>
+    ├── products.js         # Carga, filtragem e renderização de produtos
+    ├── report.js           # Modal de laudo técnico, filtros e impressão
+    └── theme.js            # Gerenciamento de tema Dark/Light
 ```
+
+### Módulos
+
+| Arquivo | Responsabilidade |
+|---|---|
+| `physics.js` | `calculateTotalEnergy`, `calculateEffectiveEnergy`, `calculateRequiredEnergy`, `getSeverityClassification` |
+| `theme.js` | `initTheme`, `applyTheme`, `toggleTheme`, `getStoredTheme` |
+| `chart.js` | `initKineticChart`, `updateKineticChart`, `updateChartTheme` |
+| `vector-canvas.js` | `drawVectorSimulation` |
+| `products.js` | `loadProductsData`, `getRecommendedProducts`, `renderRecommendations` |
+| `report.js` | `initReportModal`, `populateReportModal`, `renderReportProductsList`, `populateReportCategoryFilter` |
+| `app.js` | Bootstrap, referências DOM, listeners, integração dos módulos |
 
 ---
 
-## 💻 Como Executar Localmente
+## Identidade Visual
 
-Você pode rodar localmente com qualquer servidor estático HTTP:
+| Token | Valor |
+|---|---|
+| DS Safety Orange | `#FF6B00` |
+| Boplan Yellow | `#FFB800` |
+| Industrial Navy Base | `#070A10` / `#0E1422` |
+| Steel Blue Accent | `#38BDF8` |
+| Approved Green | `#10B981` |
+
+- **Tipografia**: `Outfit` (headings) + `Inter` (dados técnicos)
+- **Efeitos**: glassmorphism, glow suave, faixa de segurança, scrollbar personalizada
+
+---
+
+## Executar Localmente
+
+Qualquer servidor HTTP estático funciona. Exemplos:
 
 ```bash
-# Com Node.js / npx
+# Python 3
+python -m http.server 8000
+
+# Node.js (npx)
 npx serve .
 
-# Ou com Python
-python -m http.server 8000
+# VS Code
+# Extensão Live Server → clique em "Go Live"
 ```
 
-Abra o navegador em `http://localhost:3000` ou `http://localhost:8000`.
+Acesse `http://localhost:8000` no navegador.
+
+> **Importante**: a aplicação usa ES Modules (`type="module"`), por isso **não abre corretamente via `file://`** — um servidor local é necessário.
 
 ---
-
-## 📞 Contato & Suporte Docksteel
-
-- **Site Oficial:** [docksteel.com.br](https://www.docksteel.com.br/)
-- **Linha DS-Flex:** [docksteel.com.br/ds-flex/](https://www.docksteel.com.br/ds-flex/)
-- **Telefone:** +55 (15) 3346-7576
-- **WhatsApp:** +55 (15) 99794-0012
-- **E-mail:** contato@docksteel.com.br
-- **Localização:** Sorocaba - SP, Brasil

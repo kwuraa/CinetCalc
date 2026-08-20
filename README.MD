@@ -1,357 +1,103 @@
-# CinetCalc - Calculadora de Energia Cinética
+# DOCKSTEEL DS-FLEX • CinetCalc v2.0
+### Calculadora de Energia Cinética & Dimensionamento de Proteções Flexíveis
 
-## Sobre o Projeto
-
-O **CinetCalc** é uma aplicação web desenvolvida para auxiliar no dimensionamento de sistemas de proteção contra impacto utilizados em ambientes industriais.
-
-A aplicação calcula a **energia cinética** de um equipamento ou veículo com base na massa, velocidade e ângulo de impacto, exibindo os resultados em tempo real, um gráfico da variação da energia e recomendações automáticas de produtos compatíveis com o impacto calculado.
+Aplicação web profissional de engenharia desenvolvida para o dimensionamento técnico de barreiras de proteção de impacto industrial da linha **DS-FLEX (Docksteel)** em parceria com a tecnologia pioneira **Boplan® (Flex Impact®)**.
 
 ---
 
-# Tecnologias Utilizadas
+## 🛡️ Sobre a Docksteel & Linha DS-FLEX
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Chart.js
+A **Docksteel** é referência nacional em sistemas de segurança industrial, proteção contra impactos e logística segura. 
+A linha **DS-FLEX** utiliza polímeros de alta absorção de choque com **memória ativa**, que deformam elasticamente durante uma colisão e retornam ao formato original, preservando maquinários, estruturas, vidas e evitando danos ao piso de concreto.
 
 ---
 
-# Estrutura do Projeto
+## 🚀 Funcionalidades da Aplicação
+
+### 1. Dimensionamento em Tempo Real
+- **Cálculo de Energia Cinética Total ($E_k$) a 90º**:
+  $$E = \frac{1}{2} \cdot m \cdot v^2$$
+- **Cálculo de Energia Efetiva Perpendicular no Ângulo ($\theta$)**:
+  $$E_{\text{efetiva}} = E_{\text{total}} \cdot \sin^2(\theta)$$
+- **Margem de Segurança Preventiva (+20%)**: Em conformidade com as diretrizes da norma internacional **PAS 13 / EN 15512**.
+
+### 2. Atalhos Rápidos de Veículos Industriais (Presets)
+- 🛒 **Transpaleteira Elétrica**: 1.500 kg @ 6 km/h
+- ⚡ **Empilhadeira Retrátil**: 3.500 kg @ 10 km/h
+- 🚜 **Empilhadeira Contrabalançada (3.5t)**: 5.000 kg @ 12 km/h
+- 🏗️ **Empilhadeira Pesada (8t)**: 8.500 kg @ 15 km/h
+- 🚚 **Veículo Utilitário / VUC**: 3.500 kg @ 20 km/h
+
+### 3. Controles Interativos e Simulação Vetorial 2D
+- **Controles Duplos (Input + Sliders)**: Sincronização em tempo real de massa e velocidade.
+- **Seletor de Ângulo (Pills + Slider)**: Seleção rápida de 90º (frontal), 60º, 45º, 30º e 15º (rasante).
+- **Simulador Gráfico 2D no Canvas**: Demonstração visual do ângulo de impacto do veículo contra a barreira flexível e decomposição das forças em tempo real.
+
+### 4. Análise Gráfica Dinâmica (Chart.js)
+- Curva exponencial de energia vs. velocidade.
+- Linha de corte da capacidade do produto recomendado.
+- Tooltip com telemetria detalhada em Joules e kiloJoules (kJ).
+
+### 5. Sistema Inteligente de Recomendação de Produtos
+- **Opção Recomendada (Impacto Real no Ângulo + 20%)**
+- **Opção Reforçada (Pior Cenário / Frontal 90º + 20%)**
+- **Medidor de Capacidade**: Exibe a porcentagem exata de absorção utilizada e a margem de reserva.
+- **Link Direto**: Para fichas técnicas oficiais no portal `docksteel.com.br`.
+- **Cotação no WhatsApp**: Link com mensagem pré-formatada contendo todos os dados operacionais e o produto homologado.
+
+### 6. Emissão de Laudo Técnico (Impressão / PDF)
+- Geração instantânea de relatório de dimensionamento técnico com data, código de laudo, dados do veículo e soluções DS-FLEX indicadas.
+
+---
+
+## 🎨 Identidade Visual & Design System
+
+- **Cores Oficiais**:
+  - `DS Safety Orange`: `#FF6B00` / `#FF852E`
+  - `Boplan Yellow`: `#FFB800`
+  - `Industrial Slate/Navy Base`: `#070A10` / `#0E1422` / `#162034`
+  - `Steel Blue Accent`: `#38BDF8`
+  - `Approved Green`: `#10B981`
+- **Tipografia**: `Outfit` (Headings industriais de alto impacto) + `Inter` (Dados técnicos legíveis).
+- **Efeitos**: Glassmorphism, iluminação com glow suave, faixas de segurança industrial e animações fluidas.
+
+---
+
+## 📁 Estrutura de Arquivos
 
 ```
-/
-├── images
-├── index.html
-├── style.css
-├── script.js
-├── products.json
-└── README.md
-```
-
----
-
-# Funcionalidades
-
-## Cálculo da Energia Cinética
-
-O sistema calcula automaticamente a energia cinética utilizando a fórmula:
-
-> E = ½ · m · v²
-
-Onde:
-
-- **m** = massa (kg)
-- **v** = velocidade (m/s)
-
-A velocidade informada em km/h é convertida automaticamente para m/s.
-
----
-
-## Cálculo da Energia Efetiva
-
-Além da energia total (impacto a 90°), o sistema calcula a energia considerando o ângulo informado.
-
-A fórmula utilizada é:
-
-> Energia Efetiva = Energia Total × sen²(θ)
-
-Onde:
-
-- θ = ângulo de impacto
-
----
-
-## Atualização em Tempo Real
-
-Sempre que o usuário altera:
-
-- Massa
-- Velocidade
-- Ângulo
-- Categoria
-
-os resultados são recalculados automaticamente, sem necessidade de clicar em um botão.
-
----
-
-## Gráfico Dinâmico
-
-A aplicação gera um gráfico utilizando **Chart.js** que demonstra como a energia varia conforme a velocidade aumenta.
-
-O gráfico possui:
-
-- preenchimento em gradiente
-- animação suave
-- tooltip personalizado
-- atualização automática
-
----
-
-## Sistema de Recomendação
-
-Após o cálculo, o sistema procura automaticamente produtos compatíveis.
-
-O processo consiste em:
-
-1. Filtrar produtos da categoria selecionada
-2. Remover produtos sem capacidade cadastrada
-3. Ordenar pela capacidade de impacto
-4. Aplicar margem de segurança de 20%
-5. Encontrar o produto mais adequado
-
-São apresentadas duas recomendações:
-
-- Produto recomendado para a energia efetiva
-- Produto reforçado para o pior cenário (impacto frontal)
-
-Caso não exista nenhum produto disponível, o sistema informa ao usuário.
-
----
-
-# Interface
-
-A interface foi desenvolvida seguindo um estilo industrial inspirado na identidade visual da Docksteel.
-
-Características:
-
-- tema escuro
-- layout responsivo
-- efeito Glassmorphism
-- gradientes em laranja
-- cartões interativos
-- animações suaves
-- tipografia Inter
-
----
-
-# Responsividade
-
-A aplicação adapta automaticamente o layout para diferentes dispositivos.
-
-### Desktop
-
-- calculadora e gráfico lado a lado
-
-### Tablet
-
-- ajuste automático do grid
-
-### Smartphone
-
-- componentes organizados em coluna
-
----
-
-# Estrutura da Página
-
-A interface é composta por três áreas principais.
-
-## Calculadora
-
-Responsável pela entrada dos dados.
-
-Campos:
-
-- Categoria
-- Massa
-- Velocidade
-- Ângulo
-
-Resultados:
-
-- Energia Cinética
-- Energia Efetiva
-
----
-
-## Gráfico
-
-Exibe a curva de crescimento da energia em função da velocidade.
-
----
-
-## Recomendações
-
-Exibe cartões contendo:
-
-- imagem
-- nome do produto
-- energia considerada
-- capacidade do produto
-- link para ficha técnica
-
----
-
-# Fluxo da Aplicação
-
-```
-Usuário informa os dados
-
-        ↓
-
-Conversão da velocidade
-
-        ↓
-
-Cálculo da energia cinética
-
-        ↓
-
-Cálculo da energia efetiva
-
-        ↓
-
-Atualização do gráfico
-
-        ↓
-
-Busca por produtos
-
-        ↓
-
-Exibição das recomendações
+CinetCalc/
+├── images/             # 48 Fotos técnicas de produtos DS-FLEX Docksteel
+├── index.html          # Interface HTML5 semântica e responsiva
+├── style.css           # Design System oficial DOCKSTEEL DS-FLEX
+├── script.js           # Motor de cálculo, simulação 2D e gráficos
+├── products.json       # Catálogo de produtos e capacidades em Joules
+└── README.md           # Documentação completa
 ```
 
 ---
 
-# Arquivos
+## 💻 Como Executar Localmente
 
-## index.html
-
-Responsável pela estrutura da aplicação.
-
-Contém:
-
-- formulário
-- gráfico
-- área de recomendações
-
----
-
-## style.css
-
-Responsável por toda a estilização da interface.
-
-Inclui:
-
-- variáveis CSS
-- responsividade
-- layout
-- componentes
-- animações
-- tema escuro
-
----
-
-## script.js
-
-Responsável por toda a lógica da aplicação.
-
-Principais funções:
-
-### populateCategorySelect()
-
-Carrega as categorias disponíveis no seletor.
-
----
-
-### formatEnergy()
-
-Formata os valores de energia para exibição.
-
----
-
-### getRecommendedProducts()
-
-Seleciona automaticamente os produtos mais adequados conforme a energia calculada.
-
----
-
-### renderRecommendations()
-
-Cria dinamicamente os cartões de recomendação.
-
----
-
-### updateCalculatorAndChart()
-
-Função principal da aplicação.
-
-Responsável por:
-
-- calcular as energias
-- atualizar os resultados
-- atualizar o gráfico
-- atualizar as recomendações
-
----
-
-# Fonte de Dados
-
-Os produtos são carregados dinamicamente a partir do arquivo:
-
-```
-products.json
-```
-
-Cada produto possui informações como:
-
-- categoria
-- nome
-- capacidade de impacto
-- imagem
-- link para ficha técnica
-
----
-
-# Como Executar
-
-1. Clone o projeto.
+Você pode rodar localmente com qualquer servidor estático HTTP:
 
 ```bash
-git clone <repositorio>
+# Com Node.js / npx
+npx serve .
+
+# Ou com Python
+python -m http.server 8000
 ```
 
-2. Entre na pasta.
-
-```bash
-cd projeto
-```
-
-3. Execute um servidor local.
-
-Exemplo utilizando VS Code:
-
-- Live Server
-
-ou
-
-```bash
-python -m http.server
-```
-
-Depois acesse:
-
-```
-http://localhost:8000
-```
+Abra o navegador em `http://localhost:3000` ou `http://localhost:8000`.
 
 ---
 
-# Possíveis Melhorias
+## 📞 Contato & Suporte Docksteel
 
-- Exportação dos resultados em PDF
-- Histórico de cálculos
-- Comparação entre diferentes produtos
-- Cadastro de novos produtos
-- Integração com API
-- Persistência em banco de dados
-- Autenticação de usuários
-- Dashboard administrativo
-
----
-
-# Autor
-
-Desenvolvido como uma calculadora de dimensionamento de impacto para apoio na seleção de soluções de proteção industrial.
+- **Site Oficial:** [docksteel.com.br](https://www.docksteel.com.br/)
+- **Linha DS-Flex:** [docksteel.com.br/ds-flex/](https://www.docksteel.com.br/ds-flex/)
+- **Telefone:** +55 (15) 3346-7576
+- **WhatsApp:** +55 (15) 99794-0012
+- **E-mail:** contato@docksteel.com.br
+- **Localização:** Sorocaba - SP, Brasil

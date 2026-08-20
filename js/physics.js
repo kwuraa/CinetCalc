@@ -5,7 +5,7 @@ export function calculateTotalEnergy(massKg, velocityKmh) {
 
 export function calculateEffectiveEnergy(totalEnergyJoules, angleDeg) {
   const rad = (angleDeg * Math.PI) / 180;
-  return totalEnergyJoules * Math.pow(Math.sin(rad), 2);
+  return totalEnergyJoules * Math.sin(rad);
 }
 
 export function calculateRequiredEnergy(effectiveEnergyJoules, marginFactor = 1.2) {

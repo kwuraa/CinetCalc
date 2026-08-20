@@ -1577,11 +1577,9 @@ input[type="number"] {
 
 .report-section-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 8px;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .report-section-header h4 {
@@ -1590,15 +1588,14 @@ input[type="number"] {
 
 .report-controls-panel {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .report-filter-item {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-size: 0.75rem;
   color: var(--text-secondary);
 }
@@ -1607,9 +1604,13 @@ input[type="number"] {
   font-weight: 600;
   font-size: 0.725rem;
   color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .report-select {
+  flex: 1;
+  min-width: 0;
   height: 32px;
   padding: 0 10px;
   background-color: var(--bg-surface);
@@ -1636,6 +1637,7 @@ input[type="number"] {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .btn-quick-action {

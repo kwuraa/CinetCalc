@@ -1,369 +1,681 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora de Impacto - Dimensionamento DS-FLEX | Docksteel</title>
-    <meta name="description" content="Calculadora de Impacto e Dimensionamento de Proteções Flexíveis DS-FLEX da Docksteel. Tecnologia Boplan Flex Impact para segurança industrial.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <meta
+      name="description"
+      content="Calculadora de Impacto e Dimensionamento de Proteções Flexíveis DS-FLEX da Docksteel. Tecnologia Boplan Flex Impact para segurança industrial."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/modal-print.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
+  </head>
+
+  <body>
     <header class="main-header">
-        <div class="header-container">
-            <div class="brand-group">
-                <a href="https://www.docksteel.com.br/" target="_blank" rel="noopener" class="logo-link" title="Docksteel Soluções em Segurança Industrial">
-                    <div class="ds-brand-logo-text">
-                        <span class="brand-title">DOCK<strong>STEEL</strong></span>
-                        <span class="brand-sub">SAFETY &amp; LOGISTICS SOLUTIONS</span>
-                    </div>
-                </a>
-
-                <div class="brand-divider"></div>
-
-                <div class="product-badge-group">
-                    <span class="badge-dsflex">DS-FLEX</span>
-                    <span class="badge-sub">Calculadora de Impacto</span>
-                </div>
+      <div class="header-container">
+        <div class="brand-group">
+          <a
+            href="https://www.docksteel.com.br/"
+            target="_blank"
+            rel="noopener"
+            class="logo-link"
+            title="Docksteel Soluções em Segurança Industrial"
+          >
+            <div class="ds-brand-logo-text">
+              <span class="brand-title">DOCK<strong>STEEL</strong></span>
+              <span class="brand-sub">SAFETY &amp; LOGISTICS SOLUTIONS</span>
             </div>
+          </a>
 
-            <div class="header-actions">
-                <button id="themeToggle" class="btn-theme-toggle" title="Alternar Modo Claro / Escuro" aria-label="Alternar Tema">
-                    <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-                <button id="btnExportReport" class="btn-secondary" title="Gerar Laudo Técnico em PDF">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                    <span>Laudo Técnico</span>
-                </button>
-                <a href="#recommendations-anchor" class="btn-primary-header">
-                    <span>Recomendações</span>
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-                </a>
-            </div>
+          <div class="brand-divider"></div>
+
+          <div class="product-badge-group">
+            <span class="badge-dsflex">DS-FLEX</span>
+            <span class="badge-sub">Calculadora de Impacto</span>
+          </div>
         </div>
+
+        <div class="header-actions">
+          <button
+            id="themeToggle"
+            class="btn-theme-toggle"
+            title="Alternar Modo Claro / Escuro"
+            aria-label="Alternar Tema"
+          >
+            <svg
+              class="sun-icon"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg
+              class="moon-icon"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <button
+            id="btnExportReport"
+            class="btn-secondary"
+            title="Gerar Laudo Técnico em PDF"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M6 9V2h12v7"></path>
+              <path
+                d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+              ></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Laudo Técnico</span>
+          </button>
+          <a href="#recommendations-anchor" class="btn-primary-header">
+            <span>Recomendações</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
     </header>
 
     <div class="page-wrapper">
-        
-        <section class="hero-intro">
-            <h1 class="hero-title">
-                Calculadora de Impacto <span class="highlight-text">&amp; Dimensionamento DS-Flex</span>
-            </h1>
-            <p class="hero-subtitle">
-                Calcule com precisão a energia de colisão operacional de veículos industriais e selecione as barreiras com <strong>memória ativa (Flex Impact®)</strong> ideais para a sua operação.
-            </p>
-        </section>
+      <section class="hero-intro">
+        <h1 class="hero-title">
+          Calculadora de Impacto
+          <span class="highlight-text">&amp; Dimensionamento DS-Flex</span>
+        </h1>
+        <p class="hero-subtitle">
+          Calcule com precisão a energia de colisão operacional de veículos
+          industriais e selecione as barreiras com
+          <strong>memória ativa (Flex Impact®)</strong> ideais para a sua
+          operação.
+        </p>
+      </section>
 
-        <main class="app-layout">
-
-            <section class="calculator-card">
-                <header class="card-header">
-                    <div class="header-tag-row">
-                        <span class="badge badge-accent">Parâmetros Operacionais</span>
-                        <span class="safety-margin-tag">Norma EN 15512 / PAS 13</span>
-                    </div>
-                    <h2>Dados de <span>Impacto &amp; Trajetória</span></h2>
-                    <p>Ajuste os parâmetros operacionais para dimensionamento exato.</p>
-                </header>
-
-                <form class="calculator-form" onsubmit="event.preventDefault();">
-
-                    <div class="input-group dual-control">
-                        <div class="label-row">
-                            <label for="mass">
-                                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M12 3v18"/></svg>
-                                <span>Massa Total (Veículo + Carga)</span>
-                            </label>
-                            <span class="control-unit-badge">kg</span>
-                        </div>
-                        <div class="input-slider-combo">
-                            <input type="number" id="mass" value="3500" min="100" max="25000" step="50" placeholder="Ex: 3500" inputmode="decimal" required />
-                            <input type="range" id="massRange" min="500" max="15000" step="100" value="3500" class="custom-range" />
-                        </div>
-                    </div>
-
-                    <div class="input-group dual-control">
-                        <div class="label-row">
-                            <label for="velocity">
-                                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                                <span>Velocidade de Trânsito</span>
-                            </label>
-                            <span class="control-unit-badge">km/h</span>
-                        </div>
-                        <div class="input-slider-combo">
-                            <input type="number" id="velocity" value="10" min="1" max="50" step="0.5" placeholder="Ex: 10" inputmode="decimal" required />
-                            <input type="range" id="velocityRange" min="1" max="30" step="0.5" value="10" class="custom-range" />
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="label-row">
-                            <label for="angle">
-                                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H3V3"/><path d="M3 21l16-9"/><path d="M7 21a5 5 0 0 0-4-4"/></svg>
-                                <span>Ângulo de Ataque do Impacto (θ)</span>
-                            </label>
-                            <span class="angle-selected-badge" id="angleDisplayBadge">90º (Frontal)</span>
-                        </div>
-
-                        <div class="angle-pills-row">
-                            <button type="button" class="angle-pill active" data-angle="90">90º — Frontal</button>
-                            <button type="button" class="angle-pill" data-angle="45">45º — Lateral</button>
-                        </div>
-                        <input type="hidden" id="angle" value="90" />
-                    </div>
-
-                    <div class="result-box">
-                        <div class="result-header-row">
-                            <span class="result-main-tag">
-                                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                                <span>Resultados de Energia</span>
-                            </span>
-                            <span class="safety-applied-tag">+20% Margem Inclusa</span>
-                        </div>
-
-                        <div class="result-grid">
-                            <div class="result-item">
-                                <span class="result-label">Energia Frontal <span>(90º)</span></span>
-                                <div class="result-value" id="value">13,50 <span class="unit">kJ</span></div>
-                            </div>
-                            
-                            <div class="result-divider"></div>
-                            
-                            <div class="result-item highlight-effective">
-                                <span class="result-label">Energia Efetiva <span>(No Ângulo)</span></span>
-                                <div class="result-value result-angle" id="effectiveValue">13,50 <span class="unit">kJ</span></div>
-                            </div>
-                        </div>
-
-                        <div class="impact-severity-meter">
-                            <div class="severity-info">
-                                <span class="severity-label">Classificação do Impacto:</span>
-                                <strong id="severityText" class="severity-badge medium">Médio Impacto</strong>
-                            </div>
-                            <div class="severity-bar-bg">
-                                <div class="severity-bar-fill" id="severityBarFill" style="width: 45%;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-            </section>
-
-            <section class="calculator-card chart-card">
-                <header class="card-header">
-                    <div class="header-tag-row">
-                        <span class="badge badge-blue">Dinâmica de Forças</span>
-                        <span class="chart-mode-tag">E = ½ · m · v²</span>
-                    </div>
-                    <h3>Curva de Energia <span>vs. Velocidade</span></h3>
-                    <p>Comportamento exponencial da energia cinética com a velocidade.</p>
-                </header>
-
-                <div class="chart-container">
-                    <canvas id="kineticChart"></canvas>
-                </div>
-
-                <div class="chart-footer-stats">
-                    <div class="chart-stat-item">
-                        <span class="stat-dot orange"></span>
-                        <div class="stat-content">
-                            <small>Ponto Operacional</small>
-                            <strong id="chartCurrentPoint">3.500 kg @ 10 km/h</strong>
-                        </div>
-                    </div>
-                    <div class="chart-stat-item">
-                        <span class="stat-dot cyan"></span>
-                        <div class="stat-content">
-                            <small>Mínimo Recomendado (+20%)</small>
-                            <strong id="chartCapacityReq">16,20 kJ</strong>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <section class="recommendations-section" id="recommendations-anchor">
-            <header class="recommendations-header">
-                <div class="rec-badge-row">
-                    <span class="badge badge-accent">Portfólio DS-Flex</span>
-                    <span class="rec-count-badge" id="recCountBadge">Produtos Compatíveis</span>
-                </div>
-                <h3>Produtos que Absorvem o <span>Impacto Calculado</span></h3>
-                <p>Soluções com capacidade de absorção superior à energia requerida (+20%), ordenadas por eficiência.</p>
-            </header>
-
-            <div id="recommendations" class="recommendations-grid">
+      <main class="app-layout">
+        <section class="calculator-card">
+          <header class="card-header">
+            <div class="header-tag-row">
+              <span class="badge badge-accent">Parâmetros Operacionais</span>
+              <span class="safety-margin-tag">Norma EN 15512 / PAS 13</span>
             </div>
+            <h2>Dados de <span>Impacto &amp; Trajetória</span></h2>
+            <p>Ajuste os parâmetros operacionais para dimensionamento exato.</p>
+          </header>
+
+          <form class="calculator-form" onsubmit="event.preventDefault()">
+            <div class="input-group dual-control">
+              <div class="label-row">
+                <label for="mass">
+                  <svg
+                    class="input-icon"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h12l4 6-10 12L2 9z" />
+                    <path d="M12 3v18" />
+                  </svg>
+                  <span>Massa Total (Veículo + Carga)</span>
+                </label>
+                <span class="control-unit-badge">kg</span>
+              </div>
+              <div class="input-slider-combo">
+                <input
+                  type="number"
+                  id="mass"
+                  value="3500"
+                  min="100"
+                  max="25000"
+                  step="50"
+                  placeholder="Ex: 3500"
+                  inputmode="decimal"
+                  required
+                />
+                <input
+                  type="range"
+                  id="massRange"
+                  min="500"
+                  max="15000"
+                  step="100"
+                  value="3500"
+                  class="custom-range"
+                />
+              </div>
+            </div>
+
+            <div class="input-group dual-control">
+              <div class="label-row">
+                <label for="velocity">
+                  <svg
+                    class="input-icon"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                  <span>Velocidade de Trânsito</span>
+                </label>
+                <span class="control-unit-badge">km/h</span>
+              </div>
+              <div class="input-slider-combo">
+                <input
+                  type="number"
+                  id="velocity"
+                  value="10"
+                  min="1"
+                  max="50"
+                  step="0.5"
+                  placeholder="Ex: 10"
+                  inputmode="decimal"
+                  required
+                />
+                <input
+                  type="range"
+                  id="velocityRange"
+                  min="1"
+                  max="30"
+                  step="0.5"
+                  value="10"
+                  class="custom-range"
+                />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div class="label-row">
+                <label for="angle">
+                  <svg
+                    class="input-icon"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M21 21H3V3" />
+                    <path d="M3 21l16-9" />
+                    <path d="M7 21a5 5 0 0 0-4-4" />
+                  </svg>
+                  <span>Ângulo de Ataque do Impacto (θ)</span>
+                </label>
+                <span class="angle-selected-badge" id="angleDisplayBadge"
+                  >90º (Frontal)</span
+                >
+              </div>
+
+              <div class="angle-pills-row">
+                <button type="button" class="angle-pill active" data-angle="90">
+                  90º — Frontal
+                </button>
+                <button type="button" class="angle-pill" data-angle="45">
+                  45º — Lateral
+                </button>
+              </div>
+              <input type="hidden" id="angle" value="90" />
+            </div>
+
+            <div class="result-box">
+              <div class="result-header-row">
+                <span class="result-main-tag">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                  <span>Resultados de Energia</span>
+                </span>
+                <span class="safety-applied-tag">+20% Margem Inclusa</span>
+              </div>
+
+              <div class="result-grid">
+                <div class="result-item">
+                  <span class="result-label"
+                    >Energia Frontal <span>(90º)</span></span
+                  >
+                  <div class="result-value" id="value">
+                    13,50 <span class="unit">kJ</span>
+                  </div>
+                </div>
+
+                <div class="result-divider"></div>
+
+                <div class="result-item highlight-effective">
+                  <span class="result-label"
+                    >Energia Efetiva <span>(No Ângulo)</span></span
+                  >
+                  <div class="result-value result-angle" id="effectiveValue">
+                    13,50 <span class="unit">kJ</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="impact-severity-meter">
+                <div class="severity-info">
+                  <span class="severity-label">Classificação do Impacto:</span>
+                  <strong id="severityText" class="severity-badge medium"
+                    >Médio Impacto</strong
+                  >
+                </div>
+                <div class="severity-bar-bg">
+                  <div
+                    class="severity-bar-fill"
+                    id="severityBarFill"
+                    style="width: 45%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </form>
         </section>
 
+        <section class="calculator-card chart-card">
+          <header class="card-header">
+            <div class="header-tag-row">
+              <span class="badge badge-blue">Dinâmica de Forças</span>
+              <span class="chart-mode-tag">E = ½ · m · v²</span>
+            </div>
+            <h3>Curva de Energia <span>vs. Velocidade</span></h3>
+            <p>
+              Comportamento exponencial da energia cinética com a velocidade.
+            </p>
+          </header>
+
+          <div class="chart-container">
+            <canvas id="kineticChart"></canvas>
+          </div>
+
+          <div class="chart-footer-stats">
+            <div class="chart-stat-item">
+              <span class="stat-dot orange"></span>
+              <div class="stat-content">
+                <small>Ponto Operacional</small>
+                <strong id="chartCurrentPoint">3.500 kg @ 10 km/h</strong>
+              </div>
+            </div>
+            <div class="chart-stat-item">
+              <span class="stat-dot cyan"></span>
+              <div class="stat-content">
+                <small>Mínimo Recomendado (+20%)</small>
+                <strong id="chartCapacityReq">16,20 kJ</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="recommendations-section" id="recommendations-anchor">
+        <header class="recommendations-header">
+          <div class="rec-badge-row">
+            <span class="badge badge-accent">Portfólio DS-Flex</span>
+            <span class="rec-count-badge" id="recCountBadge"
+              >Produtos Compatíveis</span
+            >
+          </div>
+          <h3>Produtos que Absorvem o <span>Impacto Calculado</span></h3>
+          <p>
+            Soluções com capacidade de absorção superior à energia requerida
+            (+20%), ordenadas por eficiência.
+          </p>
+        </header>
+
+        <div id="recommendations" class="recommendations-grid"></div>
+      </section>
     </div>
 
     <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-col brand-col">
-                <div class="footer-logo">
-                    <span class="ds-brand-name">DOCK<strong>STEEL</strong></span>
-                    <span class="ds-tagline">Soluções em Segurança Industrial</span>
-                </div>
-                <p class="footer-desc">
-                    A DockSteel é referência nacional em sistemas de proteção contra impactos, quedas e riscos operacionais em ambientes industriais e logísticos.
-                </p>
-                <div class="footer-partner">
-                    <span>Parceiro Oficial:</span>
-                    <strong class="boplan-tag">BOPLAN® Flex Impact®</strong>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h5>Linhas de Soluções</h5>
-                <ul class="footer-links">
-                    <li><a href="https://www.docksteel.com.br/ds-flex/" target="_blank" rel="noopener">DS Flex (Proteções Flexíveis)</a></li>
-                    <li><a href="https://www.docksteel.com.br/ds-fire/" target="_blank" rel="noopener">DS Fire (Portas Corta-Fogo)</a></li>
-                    <li><a href="https://www.docksteel.com.br/ds-safe/" target="_blank" rel="noopener">DS Safe (Sinalização e Fitas 5S)</a></li>
-                    <li><a href="https://www.docksteel.com.br/ds-service/" target="_blank" rel="noopener">DS Service (Manutenção e Peças)</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h5>Canais de Atendimento</h5>
-                <ul class="footer-contact">
-                    <li>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <span>Sorocaba - SP, Brasil</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        <span>+55 (15) 3346-7576</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                        <span>contato@docksteel.com.br</span>
-                    </li>
-                </ul>
-            </div>
+      <div class="footer-container">
+        <div class="footer-col brand-col">
+          <div class="footer-logo">
+            <span class="ds-brand-name">DOCK<strong>STEEL</strong></span>
+            <span class="ds-tagline">Soluções em Segurança Industrial</span>
+          </div>
+          <p class="footer-desc">
+            A DockSteel é referência nacional em sistemas de proteção contra
+            impactos, quedas e riscos operacionais em ambientes industriais e
+            logísticos.
+          </p>
+          <div class="footer-partner">
+            <span>Parceiro Oficial:</span>
+            <strong class="boplan-tag">BOPLAN® Flex Impact®</strong>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="footer-bottom-inner">
-                <p>&copy; 2026 Docksteel Soluções em Segurança Industrial. Todos os direitos reservados.</p>
-                <p class="footer-sub-credit">Calculadora de Impacto DS-FLEX • Ferramenta Técnica de Dimensionamento</p>
-            </div>
+        <div class="footer-col">
+          <h5>Linhas de Soluções</h5>
+          <ul class="footer-links">
+            <li>
+              <a
+                href="https://www.docksteel.com.br/ds-flex/"
+                target="_blank"
+                rel="noopener"
+                >DS Flex (Proteções Flexíveis)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.docksteel.com.br/ds-fire/"
+                target="_blank"
+                rel="noopener"
+                >DS Fire (Portas Corta-Fogo)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.docksteel.com.br/ds-safe/"
+                target="_blank"
+                rel="noopener"
+                >DS Safe (Sinalização e Fitas 5S)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.docksteel.com.br/ds-service/"
+                target="_blank"
+                rel="noopener"
+                >DS Service (Manutenção e Peças)</a
+              >
+            </li>
+          </ul>
         </div>
+
+        <div class="footer-col">
+          <h5>Canais de Atendimento</h5>
+          <ul class="footer-contact">
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Sorocaba - SP, Brasil</span>
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+              <span>+55 (15) 3346-7576</span>
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span>contato@docksteel.com.br</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p>
+            &copy; 2026 Docksteel Soluções em Segurança Industrial. Todos os
+            direitos reservados.
+          </p>
+          <p class="footer-sub-credit">
+            Calculadora de Impacto DS-FLEX • Ferramenta Técnica de
+            Dimensionamento
+          </p>
+        </div>
+      </div>
     </footer>
 
     <div id="reportModal" class="modal-overlay">
-        <div class="modal-card">
-            <div class="modal-header">
-                <div class="modal-title-group">
-                    <span class="badge badge-accent">Documento Técnico</span>
-                    <h3>Laudo de Dimensionamento de Impacto DS-FLEX</h3>
-                </div>
-                <button id="btnCloseModal" class="btn-close" aria-label="Fechar">&times;</button>
-            </div>
-            
-            <div class="modal-body" id="printableReport">
-                <div class="report-header-print">
-                    <div class="report-brand">
-                        <h2>DOCK<strong>STEEL</strong></h2>
-                        <span>SOLUÇÕES EM SEGURANÇA INDUSTRIAL</span>
-                    </div>
-                    <div class="report-meta">
-                        <span>Data: <strong id="reportDate">19/08/2026</strong></span>
-                        <span>Código do Laudo: <strong id="reportCode">DS-FLEX-2026-0819</strong></span>
-                    </div>
-                </div>
-
-                <div class="report-section">
-                    <h4>1. Parâmetros Operacionais de Entrada</h4>
-                    <table class="report-table">
-                        <tr>
-                            <td><strong>Equipamento / Veículo:</strong></td>
-                            <td id="repVehicle">Veículo / Equipamento Operacional</td>
-                            <td><strong>Ângulo de Ataque (θ):</strong></td>
-                            <td id="repAngle">90º (Frontal)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Massa Total (m):</strong></td>
-                            <td id="repMass">3.500 kg</td>
-                            <td><strong>Velocidade (v):</strong></td>
-                            <td id="repVel">10,0 km/h (2,78 m/s)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Margem de Segurança:</strong></td>
-                            <td colspan="3">+20% (Conforme Norma PAS 13)</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="report-section">
-                    <h4>2. Resultados Físicos Calculados</h4>
-                    <div class="report-kpi-grid">
-                        <div class="report-kpi-box">
-                            <small>Energia Cinética Total (90º)</small>
-                            <strong id="repTotalEnergy">13,50 kJ</strong>
-                            <span>Frontal</span>
-                        </div>
-                        <div class="report-kpi-box highlight">
-                            <small>Energia Efetiva no Ângulo</small>
-                            <strong id="repEffectiveEnergy">13,50 kJ</strong>
-                            <span>No Ângulo Real</span>
-                        </div>
-                        <div class="report-kpi-box">
-                            <small>Capacidade Mínima Requerida (+20%)</small>
-                            <strong id="repReqEnergy">16,20 kJ</strong>
-                            <span>Margem Preventiva</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="report-section">
-                    <div class="report-section-header">
-                        <h4>3. Soluções DS-FLEX Homologadas</h4>
-                        <div class="report-controls-panel no-print">
-                            <div class="report-filter-item">
-                                <label for="reportCategoryFilter">Tipo / Categoria:</label>
-                                <select id="reportCategoryFilter" class="report-select">
-                                    <option value="all">Todos os Tipos de Produtos</option>
-                                </select>
-                            </div>
-                            <div class="report-quick-actions">
-                                <button type="button" id="btnSelectAllProducts" class="btn-quick-action" title="Marcar todos os produtos visíveis">
-                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                    <span>Marcar Todos</span>
-                                </button>
-                                <button type="button" id="btnSelectIdealProduct" class="btn-quick-action" title="Marcar apenas o produto com melhor dimensionamento">
-                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                    <span>Apenas Recomendado</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="reportProductsList" class="report-products-list">
-                    </div>
-                </div>
-
-                <div class="report-footer-print">
-                    <p>Este relatório é gerado pela ferramenta técnica <strong>Calculadora de Impacto Docksteel</strong> para auxílio no dimensionamento de proteções flexíveis em polímero com memória ativa (tecnologia Boplan® Flex Impact®). Para projetos completos de layout e instalação, consulte a equipe de engenharia da Docksteel.</p>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn-secondary" id="btnCancelModal">Voltar</button>
-                <button type="button" class="btn-primary" id="btnPrintModal">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                    <span>Imprimir / Salvar em PDF</span>
-                </button>
-            </div>
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="badge badge-accent">Documento Técnico</span>
+            <h3>Laudo de Dimensionamento de Impacto DS-FLEX</h3>
+          </div>
+          <button id="btnCloseModal" class="btn-close" aria-label="Fechar">
+            &times;
+          </button>
         </div>
+
+        <div class="modal-body" id="printableReport">
+          <div class="report-header-print">
+            <div class="report-brand">
+              <h2>DOCK<strong>STEEL</strong></h2>
+              <span>SOLUÇÕES EM SEGURANÇA INDUSTRIAL</span>
+            </div>
+            <div class="report-meta">
+              <span>Data: <strong id="reportDate">19/08/2026</strong></span>
+              <span
+                >Código do Laudo:
+                <strong id="reportCode">DS-FLEX-2026-0819</strong></span
+              >
+            </div>
+          </div>
+
+          <div class="report-section">
+            <h4>1. Parâmetros Operacionais de Entrada</h4>
+            <table class="report-table">
+              <tr>
+                <td><strong>Equipamento / Veículo:</strong></td>
+                <td id="repVehicle">Veículo / Equipamento Operacional</td>
+                <td><strong>Ângulo de Ataque (θ):</strong></td>
+                <td id="repAngle">90º (Frontal)</td>
+              </tr>
+              <tr>
+                <td><strong>Massa Total (m):</strong></td>
+                <td id="repMass">3.500 kg</td>
+                <td><strong>Velocidade (v):</strong></td>
+                <td id="repVel">10,0 km/h (2,78 m/s)</td>
+              </tr>
+              <tr>
+                <td><strong>Margem de Segurança:</strong></td>
+                <td colspan="3">+20% (Conforme Norma PAS 13)</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="report-section">
+            <h4>2. Resultados Físicos Calculados</h4>
+            <div class="report-kpi-grid">
+              <div class="report-kpi-box">
+                <small>Energia Cinética Total (90º)</small>
+                <strong id="repTotalEnergy">13,50 kJ</strong>
+                <span>Frontal</span>
+              </div>
+              <div class="report-kpi-box highlight">
+                <small>Energia Efetiva no Ângulo</small>
+                <strong id="repEffectiveEnergy">13,50 kJ</strong>
+                <span>No Ângulo Real</span>
+              </div>
+              <div class="report-kpi-box">
+                <small>Capacidade Mínima Requerida (+20%)</small>
+                <strong id="repReqEnergy">16,20 kJ</strong>
+                <span>Margem Preventiva</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-section">
+            <div class="report-section-header">
+              <h4>3. Soluções DS-FLEX Homologadas</h4>
+              <div class="report-controls-panel no-print">
+                <div class="report-filter-item">
+                  <label for="reportCategoryFilter">Tipo / Categoria:</label>
+                  <select id="reportCategoryFilter" class="report-select">
+                    <option value="all">Todos os Tipos de Produtos</option>
+                  </select>
+                </div>
+                <div class="report-quick-actions">
+                  <button
+                    type="button"
+                    id="btnSelectAllProducts"
+                    class="btn-quick-action"
+                    title="Marcar todos os produtos visíveis"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="13"
+                      height="13"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span>Marcar Todos</span>
+                  </button>
+                  <button
+                    type="button"
+                    id="btnSelectIdealProduct"
+                    class="btn-quick-action"
+                    title="Marcar apenas o produto com melhor dimensionamento"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="13"
+                      height="13"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                    <span>Apenas Recomendado</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="reportProductsList" class="report-products-list"></div>
+          </div>
+
+          <div class="report-footer-print">
+            <p>
+              Este relatório é gerado pela ferramenta técnica
+              <strong>Calculadora de Impacto Docksteel</strong> para auxílio no
+              dimensionamento de proteções flexíveis em polímero com memória
+              ativa (tecnologia Boplan® Flex Impact®). Para projetos completos
+              de layout e instalação, consulte a equipe de engenharia da
+              Docksteel.
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="btnCancelModal">
+            Voltar
+          </button>
+          <button type="button" class="btn-primary" id="btnPrintModal">
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M6 9V2h12v7"></path>
+              <path
+                d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
+              ></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Imprimir / Salvar em PDF</span>
+          </button>
+        </div>
+      </div>
     </div>
 
     <script type="module" src="js/app.js"></script>
-</body>
+  </body>
 </html>

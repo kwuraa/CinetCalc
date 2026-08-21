@@ -2,11 +2,20 @@
   "categories": [
     { "id": "barreiras-flexiveis", "name": "Barreiras flexíveis" },
     { "id": "guarda-corpo", "name": "Guarda-corpo" },
-    { "id": "cantos-e-colunas", "name": "Proteções flexíveis para cantos e colunas" },
-    { "id": "estruturas-armazenagem", "name": "Proteções flexíveis para estruturas de armazenagem" },
+    {
+      "id": "cantos-e-colunas",
+      "name": "Proteções flexíveis para cantos e colunas"
+    },
+    {
+      "id": "estruturas-armazenagem",
+      "name": "Proteções flexíveis para estruturas de armazenagem"
+    },
     { "id": "postes-e-traves", "name": "Postes e traves de proteção" },
     { "id": "portoes-seguranca", "name": "Portões de segurança" },
-    { "id": "rodapes-e-batentes", "name": "Rodapés e batentes de roda flexíveis" }
+    {
+      "id": "rodapes-e-batentes",
+      "name": "Rodapés e batentes de roda flexíveis"
+    }
   ],
   "products": [
     {

@@ -1,6 +1,3 @@
-/**
- * Módulo do Gráfico de Energia Cinética vs. Velocidade (Chart.js)
- */
 
 /**
  * Inicializa a instância do Chart.js
